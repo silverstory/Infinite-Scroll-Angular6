@@ -4,24 +4,10 @@
 
 /* Custom CSS Classes */
 
-.mat-card {
-    text-align: -webkit-center;
-}
-
 .demo-toolbar {
     display: flex;
     align-items: center;
     width: 60%;
-}
-
-.demo-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-}
-
-.demo-full-width {
-    width: 100%;
 }
 
 body {
@@ -29,40 +15,28 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-mat-card {
-    max-width: 80%;
-    margin: 2em auto;
-    /* text-align: center; */
-}
-
 mat-toolbar-row {
     justify-content: space-between;
 }
 
-.done {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: white;
+.example-card {
+  max-width: 400px;
+}
+
+.example-card p {
+  font-size: 0.9em;
+  line-height: 2em;
+}
+
+.example-header-image {
+  background-image: url('https://www.freeiconspng.com/uploads/flat-face-icon-23.png');
+  background-size: cover;
+}
+
+.tag {
+    font-size: 2.2em;
 }
 
 .content-center {
     text-align: -webkit-center;
-}
-
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-
-.alert-info {
-    color: #31708f;
-    background-color: #d9edf7;
-    border-color: #bce8f1;
-}
-
-strong {
-    font-size: 30px;
 }

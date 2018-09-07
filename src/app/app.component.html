@@ -1,16 +1,39 @@
 <mat-toolbar color="accent">
-  <span>Manav Pandya - C#Corner</span>
+  <span>OP CISS</span>
   <span class="demo-toolbar"></span>
 </mat-toolbar>
-<mat-card>
-  <!-- <div id="login" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-  </div> -->
-  <div class="container">
-    <div class="row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false"
-    style="height: 400px; overflow-y: scroll;">
-      <div *ngFor="let item of myProfileList" class="col-md-4" style="margin-top: 10px;">
-        <img style="height: 220px;width: 315px;" src="{{item.photothumbnailurl}}" />
-      </div>
-    </div>
+
+<div class="row"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()"
+      [scrollWindow]="true"
+      style="height: 100%;
+              overflow-y: scroll;
+              text-align: -webkit-center;">
+  <div *ngFor="let i of myProfileList" class="col-md-4" style="font-family: Lato; margin: 2em auto;">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ i.name.first }} {{ i.name.last }}</mat-card-title>
+        <mat-card-subtitle>{{ i.distinction }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ i.photothumbnailurl }}" alt="Photo" style="height: 275px; object-fit: cover;">
+      <mat-card-content>
+        <p>
+          &#9679; Mr/Ms. <b>{{ i.name.last }}</b> is requesting to have access to these areas <strong>{{ getAccess(i.access.one, i.access.two, i.access.three, i.access.four) }}</strong>.
+          <br>&#9679; He/she is an <b style="color: red">{{ i.recordstatus }}</b>&nbsp;<b>{{ i.distinction }}</b> who <span *ngIf="i.recordstatus === 'ACTIVE'">currently</span><span *ngIf="i.recordstatus === 'INACTIVE'">recently</span> holds the position <b>{{ i.employee.position }}</b> at the <b>{{ i.employee.office }}</b>.
+          <br>&#9679; Based on the records, there is no history that this person has been blacklisted from entering Malacanang Complex.
+          <br>&#9679; His/her most recent access level is <b>{{ i.personaccesslevel }}</b> with current <b>{{ i.accessapproval }}</b> status.
+        </p>
+        <!-- arrow 9658 square 9632 -->
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">PROCESS</button>
+        <button mat-raised-button color="accent">DENY</button> <!-- SHOULD STATE DENY REASON ON MODAL DIALOG WHEN CLICKED -->
+      </mat-card-actions>
+    </mat-card>
   </div>
-</mat-card>
+</div>
+

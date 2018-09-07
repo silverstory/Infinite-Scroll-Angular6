@@ -14,7 +14,7 @@ const httpOptions = {
 export class MydataserviceService {
 
   private find = 'Approved';
-  private limit = 10;
+  private limit = 3;
 
   constructor(private http: HttpClient) { }
 
