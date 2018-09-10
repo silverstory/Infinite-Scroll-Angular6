@@ -97,4 +97,8 @@ export class AppComponent implements OnInit {
       }
   }
 
+  OnMatCardClickEvent(item): void {
+    console.log(item);
+  }
+
 }
